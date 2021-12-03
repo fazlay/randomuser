@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400;500&display=swap");
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin:25px 50px;
+  grid-gap: 20px;
+
+}
+
+.card {
+  margin: 0 auto;
+  background-color: #222831;
+
+  color: white;
+}
+
