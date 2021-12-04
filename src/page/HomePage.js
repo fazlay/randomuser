@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import { CardGroup, Col, Row } from 'react-bootstrap'
 import SingleUser from '../component/SingleUser'
-import '../App.css'
+
+
 
 const HomePage = () => {
     const [users, setUsers]=useState([])
@@ -14,7 +16,17 @@ useEffect(() => {
    
     return (
         <div className="container">
-           {users.map(user=>(<SingleUser key={user.cell} user={user}></SingleUser>))}
+            <Row md={4} className="g-4">
+           
+            {users.map(user=>(<SingleUser key={user.cell} user={user}></SingleUser>))}
+                
+      
+            </Row>
+      
+               
+                
+
+        
         </div>
     )
 }
