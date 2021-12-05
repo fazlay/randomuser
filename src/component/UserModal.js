@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { Image, Modal } from "react-bootstrap";
-import { Button } from 'react-bootstrap';
-function UserModal({user}) {
-console.log(user?.email);
-
+import { Button } from "react-bootstrap";
+import UserLocation from "./UserLocation";
+function UserModal({ user }) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -19,18 +18,25 @@ console.log(user?.email);
         <Modal.Header closeButton>
           <Modal.Title>{`${user?.name.title} ${user?.name.first} ${user?.name.last}`}</Modal.Title>
         </Modal.Header>
-        <Modal.Body> <Image src={user?.picture.large} rounded /></Modal.Body>
+        <Modal.Body>
+          {" "}
+          <Image src={user?.picture.large} rounded />
+        </Modal.Body>
         <Modal.Body>Email: {user?.email}</Modal.Body>
         <Modal.Body>Phone: {user?.phone}</Modal.Body>
         <Modal.Body>Country: {user?.location.country}</Modal.Body>
         <Modal.Body>City: {user?.location.city}</Modal.Body>
         <Modal.Body>Age: {user?.dob.age}</Modal.Body>
+        <Modal.Body>
+          Latitude: {user?.location.coordinates.latitude} Longitude:{" "}
+          {user?.location.coordinates.longitude}
+        </Modal.Body>
+
+        <UserLocation location={user?.location.coordinates}></UserLocation>
+
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
           </Button>
         </Modal.Footer>
       </Modal>
@@ -38,4 +44,4 @@ console.log(user?.email);
   );
 }
 
-export default UserModal
+export default UserModal;
