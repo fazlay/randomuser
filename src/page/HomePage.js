@@ -15,7 +15,7 @@ useEffect(() => {
     }, [])
    
     return (
-        <div className="container">
+        <div className="container py-4">
             <Row md={4} className="g-4">
            
             {users.map(user=>(<SingleUser key={user.cell} user={user}></SingleUser>))}

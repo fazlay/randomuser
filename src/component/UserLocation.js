@@ -6,7 +6,7 @@ const UserLocation = ({ location }) => {
   const position = [latitude, longitude];
   return (
     <>
-      <MapContainer center={position} zoom={10} scrollWheelZoom={false}>
+      <MapContainer center={position} zoom={4} scrollWheelZoom={false}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
